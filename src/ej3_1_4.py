@@ -18,7 +18,7 @@ def pedir_numeros():
     cont = 0
     while cont < 6:
         try:
-            num = input(f"({cont + 1})=> ")
+            num = int(input(f"({cont + 1})=> "))
             if int(num) < 1 or int(num) > 50:
                 print("Escribe un numero valido")
 
@@ -30,12 +30,25 @@ def pedir_numeros():
                 #lista += num 
                 cont += 1
         except ValueError:
-            print("Tienes que poner un numero")
-            
-    print(lista)
-    
+            print("Tienes que poner un numero")     
 
-#def main():
-    
+    lista.sort()
+    return lista
+
+def pedir_reintegro():
+    try:
+        reintegro = int(input("Dame el reintegro => "))
+        while reintegro < 1 or reintegro > 9:
+            reintegro = int(input("Dame el reintegro => "))
+    except ValueError:
+        print("Pon un numero")
+    return reintegro
+
+def main():
+    lista = pedir_numeros()
+    reintegro = pedir_reintegro()
+    lista.append(reintegro)
+    print(lista)
+
 if __name__=="__main__":
-    pedir_numeros()
+    main()
