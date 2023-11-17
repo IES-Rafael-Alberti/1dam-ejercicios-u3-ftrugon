@@ -1,5 +1,8 @@
 def num_asig():
-    numasig = int(input("Dime el numero de asignaturas: "))
+    try:
+        numasig = int(input("Dime el numero de asignaturas: "))
+    except:
+        raise ValueError
     return(numasig)
 
 def pedir_asignotas(numasig) ->list:
