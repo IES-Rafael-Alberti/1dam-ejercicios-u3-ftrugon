@@ -23,9 +23,9 @@ def mostrar(nuevalista:list) ->str:
     linea = "Tienes que repetir "
     for i in range(len(nuevalista)):
         if i == 0:
-            linea += f"{nuevalista[i]}"
+            linea += f"{nuevalista[i][0]}"
         else:
-            linea += f" {nuevalista[i]}"
+            linea += f" {nuevalista[i][0]}"
     print(linea)
 
 def main():

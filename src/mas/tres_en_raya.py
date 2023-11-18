@@ -1,6 +1,5 @@
 import os
 
-
 #Simbolos que se mostraran en el tablero
 FICHAS = (' ','X','O')
 
@@ -96,9 +95,34 @@ def colocar_ficha(tablero:tuple, jugador:int):
             pulse_para_continuar()
             mostrar_tablero(tablero)
 
-def verificar_ganador(tablero) -> tuple:
-    #verificar filas y columnas
+def verificar_ganador(tablero):
+    for x in range(1,3):
+        if comprobar_fila(tablero,x) or comprobar_columna(tablero,x) or comprobar_diagonal(tablero,x):
+            return x, True
     
+    #if comprobar_fila(tablero,1) or comprobar_columna(tablero,1) or comprobar_diagonal(tablero,1):
+    #    return 1, True
+    #if comprobar_fila(tablero,2) or comprobar_columna(tablero,2) or comprobar_diagonal(tablero,2):
+    #    return 2, True
+    
+    return 0, False
+
+def comprobar_fila(tablero:tuple, ficha: str) -> bool:
+    for i in range(len(tablero)):
+        if tablero[i][0] == tablero[i][1] == tablero[i][2] == ficha:
+            return True
+    return False
+
+def comprobar_columna(tablero:tuple, ficha: str) -> bool:
+    for i in range(len(tablero)):
+        if tablero[0][i] == tablero[1][i] == tablero[2][i] == ficha:
+            return True
+    return False
+
+def comprobar_diagonal(tablero:tuple, ficha: str) -> bool:
+    return tablero[0][0] == tablero[1][1] == tablero[2][2] == ficha or tablero[0][2] == tablero[1][1] == tablero[2][0] == ficha
+
+
 def jugar(tablero: tuple):
 
     turno = 0
@@ -119,21 +143,19 @@ def jugar(tablero: tuple):
 
         if ronda >= 3:
             ganador, hay_ganador = verificar_ganador(tablero)
+            
         
         if hay_ganador:
             print(f"\n El jugador {ganador} ha ganado!\n")
         
-        if ronda == 9:
+        if ronda == 5:
             hay_ganador = True
             print("\nEmpate!")
-
-
 
 def main():
     tablero = crear_tablero()
     mostrar_tablero(tablero)
     jugar(tablero)
-    
 
 
 if __name__ == "__main__":

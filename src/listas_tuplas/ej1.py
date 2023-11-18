@@ -14,10 +14,11 @@ def mostrar_asig(asig):
 def main():
     try:
         numasig = num_asig()
+        asig = pedir_asignatura(numasig)
+        mostrar_asig(asig)
     except ValueError:
         print("Una asignatura poooorfa")
-    asig = pedir_asignatura(numasig)
-    mostrar_asig(asig)
+    
 
 if __name__ == "__main__":
     main()
