@@ -122,7 +122,6 @@ def comprobar_columna(tablero:tuple, ficha: str) -> bool:
 def comprobar_diagonal(tablero:tuple, ficha: str) -> bool:
     return tablero[0][0] == tablero[1][1] == tablero[2][2] == ficha or tablero[0][2] == tablero[1][1] == tablero[2][0] == ficha
 
-
 def jugar(tablero: tuple):
 
     turno = 0
@@ -156,7 +155,6 @@ def main():
     tablero = crear_tablero()
     mostrar_tablero(tablero)
     jugar(tablero)
-
 
 if __name__ == "__main__":
     main()
