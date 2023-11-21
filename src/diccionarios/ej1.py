@@ -1,7 +1,7 @@
 def comprobar(diccionario):
     divisa = input("Dime una divisa: ")
-    if divisa.capitalize() in diccionario:
-        print(f"El simbolo de {divisa} es {diccionario[divisa.capitalize()]}")
+    if divisa.title() in diccionario:
+        print(f"El simbolo de {divisa} es {diccionario[divisa.title()]}")
     else:
         print(f"Eso no es una divisa")
 

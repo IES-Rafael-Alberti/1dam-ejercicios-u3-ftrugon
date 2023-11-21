@@ -1,8 +1,8 @@
 def calculo(precios):
     producto = input("Dime el producto del que quieras saber el precio: ")
-    if producto.capitalize() in precios:
+    if producto.title() in precios:
         kilos = float(input("Cuantos kilos te quieres llevar: "))
-        total = kilos * precios[producto.capitalize()]
+        total = kilos * precios[producto.title()]
         print("El precio de los kilos de "+str(producto)+" que te quieres llevar es de {:.2f}".format(total))
     else:
         print("Escribe un producto")
