@@ -3,13 +3,11 @@ def sumar_a_diccio(info,clave,diccio_cosas) -> dict:
     return diccio_cosas
 
 
-
 def mostrar_diccionario(diccio_cosas) -> dict:
     print(f"\nSe ha actualizado la lista -----------------------------------------------------\n")
     for info, clave in diccio_cosas.items():
         print(f"Se ha añadido {info} con clave {clave}\n")
     print("--------------------------------------------------------------------------------------")
-
 
 
 def pedir_info():
@@ -25,8 +23,12 @@ def pedir_info():
         if info == "*":
             break
         clave = input("Dime la clave a añadir al diccionario: ")
-    
+
+
 def main(): 
     pedir_info()
+
+
+
 if __name__ == "__main__":
     main()
