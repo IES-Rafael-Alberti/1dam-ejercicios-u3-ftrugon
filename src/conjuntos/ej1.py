@@ -1,10 +1,9 @@
 def retornar__lista(lista):
-    lista_todo = []
-    lista_dentro = []
-    for i in range(len(lista)):
-        
-        
-        
+    conjunto_calles = set()
+    for i in lista:
+        conjunto_calles.add(i[3])
+    print(conjunto_calles)
+
 
 def main():
     lista = [
