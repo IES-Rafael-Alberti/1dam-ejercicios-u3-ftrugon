@@ -21,8 +21,8 @@ def reemplazar(frase:str, diccio:dict) -> str:
     listadefrase = frase.split(" ")
     x =""
     for elemento in listadefrase:
-        #if elemento in diccio:
-        x += frase.replace(elemento, str(diccio.get(elemento,elemento)))
+        if elemento in diccio:
+            x += frase.replace(elemento, str(diccio.get(elemento,elemento)))
     return x
 
 
