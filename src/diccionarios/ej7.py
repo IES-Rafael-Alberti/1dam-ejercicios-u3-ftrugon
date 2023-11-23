@@ -8,7 +8,14 @@ def pedir_articulo2() -> str:
 
 def pedir_precio() -> float:
     #para retornar el precio
-    return float(input("Dime su precio: "))
+    estado = False
+    while not estado:
+        try:
+            precio = float(input("Dime su precio: "))
+        except ValueError:
+            print("Pon un numero")
+        else:
+            return precio
 
 def bucle_de_artiprecio() -> dict:
     articulo = pedir_articulo()
