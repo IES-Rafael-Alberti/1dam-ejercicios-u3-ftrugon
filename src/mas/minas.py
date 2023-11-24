@@ -277,7 +277,7 @@ def jugar():
         accion, fila, columna = pedir_accion()
 
         if accion == REVELAR:
-            celda_con_mina = not revelar_celda(tablero, celdas_reveladas, celdas_marcadas, fila, columna)
+            celda_con_mina = revelar_celda(tablero, celdas_reveladas, celdas_marcadas, fila, columna)
 
             if celda_con_mina:
                 print("¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡Oh no! ¡Has pisado una mina!!!!!!!!!!!!!!!!!!!!!")
