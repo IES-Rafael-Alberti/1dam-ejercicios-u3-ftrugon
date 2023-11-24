@@ -15,14 +15,18 @@ def transformar_a_diccio(listade2:list) -> dict:
     return diccio
 
 def pedir_frase() -> str:
+    #Retorna el str de algo que le demos
     return input("Dime la frase, yo traducire las palabras: ")
 
+
 def reemplazar(frase:str, diccio:dict) -> str:
+    # aqui esta mi problema, EJ: yo traduzco hola a hello, si yo pongo hola que tal me deberia devolver Hello que tal
+    # en lugar de eso me devuelve ["Hello"] que tal
     listadefrase = frase.split(" ")
     x =""
     for elemento in listadefrase:
-        #if elemento in diccio:
-        x += frase.replace(elemento, str(diccio.get(elemento,elemento)))
+        if elemento in diccio:
+            x += frase.replace(elemento, str(diccio.get(elemento,elemento)))
     return x
 
 
