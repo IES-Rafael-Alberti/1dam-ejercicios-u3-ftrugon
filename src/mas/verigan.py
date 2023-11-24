@@ -22,7 +22,7 @@ def comprobar_diagonales(tablero: tuple, ficha: str) -> bool:
     return tablero[0][0] == tablero[1][1] == tablero[2][2] == ficha or tablero[0][2] == tablero[1][1] == tablero[2][0] == ficha
 
 def main():
-    comprobar(([1,2,0],[2,2,0],[1,1,2]))
+    comprobar(([2,1,0],[2,1,0],[2,1,2]))
     comprobar(([1,2,0],[1,2,0],[1,1,2]))
     comprobar(([2,2,0],[1,2,0],[1,1,2]))
     comprobar(([1,1,1],[2,2,0],[1,2,2]))
