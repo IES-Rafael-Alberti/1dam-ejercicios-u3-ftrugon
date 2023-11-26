@@ -19,13 +19,30 @@ def alumnos_secundaria() -> list:
         return secundaria
 
 def mostrar_cosas(primaria:list, secundaria:list):
-    print("Se van a mostrar los nombres de todos los alumnos de primaria y los de secundaria, sin repeticiones.")
+    print(f"\nSe van a mostrar los nombres de todos los alumnos de primaria y los de secundaria, sin repeticiones.")
     lista_escuela = set(primaria + secundaria)
     print(lista_escuela)
     
-    print("Se van a mostrar qué nombres se repiten entre los alumnos de primaria y secundaria")
+    print(f"\nSe van a mostrar qué nombres se repiten entre los alumnos de primaria y secundaria")
     repetidos = set(primaria) & set(secundaria)
     print(repetidos)
+
+    print(f"\nSe van a mostrar qué nombres de primaria no se repiten en los de nivel secundaria.")
+    exclusivo_primaria = set(primaria) - set(secundaria)
+    print(exclusivo_primaria)
+
+    print(f"\nSe van a mostrar si todos los nombres de primaria están incluidos en secundaria.")
+    primaria_repetido = set(primaria) & set(secundaria)
+    Se_repiten = set(primaria).issubset(set(secundaria))
+    if Se_repiten == False:
+        valor = "No"
+        print(f"{valor} todos los nombres de primaria están incluidos en secundaria. Solo se repiten")
+        print(f"{primaria_repetido}")
+    else:
+        print(f"Todos los nombres de primaria están incluidos en secundaria.")
+        print(f"{primaria_repetido}")
+
+    
 
 def main():
     primaria = alumnos_primaria()
